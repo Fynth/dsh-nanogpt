@@ -1,0 +1,4 @@
+{
+  "title": "NanoGPT",
+  "description": "NanoGPT provider with live model discovery, model-specific reasoning efforts, routing, usage, and diagnostics."
+}

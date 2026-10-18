@@ -1,0 +1,140 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "deepseek/deepseek-v4.1-flash-1017",
+      "object": "model",
+      "created": 1790208000,
+      "owned_by": "deepseek",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "description": "Fast DeepSeek reasoning model with tools and vision.",
+      "context_length": 1048576,
+      "max_output_tokens": 393216,
+      "architecture": { "modality": "text+image->text", "input_modalities": ["text", "image"], "output_modalities": ["text"] },
+      "capabilities": {
+        "vision": true,
+        "video_input": false,
+        "audio_input": false,
+        "reasoning": true,
+        "tool_calling": true,
+        "parallel_tool_calls": false,
+        "structured_output": false,
+        "pdf_upload": false,
+        "batch_api": true
+      },
+      "supported_service_tiers": [],
+      "pricing": {
+        "prompt": 0.1,
+        "completion": 0.6,
+        "cacheReadInputPer1kTokens": 0.000003,
+        "currency": "USD",
+        "unit": "per_million_tokens"
+      },
+      "reasoning_efforts": ["none", "low", "high", "max"],
+      "providers": ["deepinfra", "deepseek", "baseten"],
+      "subscription": { "included": true, "inputTokenMultiplier": 1, "note": "Included in subscription" },
+      "category": "More"
+    },
+    {
+      "id": "anthropic/claude-opus-5.5",
+      "object": "model",
+      "created": 1790208000,
+      "owned_by": "anthropic",
+      "name": "Claude Opus 5.5",
+      "description": "Adaptive-thinking Claude model.",
+      "context_length": 1000000,
+      "max_output_tokens": 128000,
+      "architecture": { "input_modalities": ["text", "image"], "output_modalities": ["text"] },
+      "capabilities": {
+        "vision": true,
+        "reasoning": true,
+        "tool_calling": true,
+        "parallel_tool_calls": false,
+        "structured_output": true,
+        "pdf_upload": true
+      },
+      "supported_service_tiers": [],
+      "pricing": {
+        "prompt": 4,
+        "completion": 20,
+        "cacheReadInputPer1kTokens": 0.0002,
+        "cacheWriteInputPer1kTokens": 0.005,
+        "currency": "USD",
+        "unit": "per_million_tokens"
+      },
+      "reasoning_efforts": ["low", "medium", "high", "xhigh", "max"],
+      "subscription": { "included": false, "inputTokenMultiplier": 1, "note": "Not included in subscription" }
+    },
+    {
+      "id": "openai/gpt-5.5",
+      "object": "model",
+      "created": 1790208000,
+      "owned_by": "openai",
+      "name": "GPT-5.5",
+      "description": "OpenAI flagship.",
+      "context_length": 1050000,
+      "max_output_tokens": 128000,
+      "architecture": { "input_modalities": ["text", "image"], "output_modalities": ["text"] },
+      "capabilities": { "vision": true, "reasoning": true, "tool_calling": true, "structured_output": true, "pdf_upload": true },
+      "supported_service_tiers": ["flex", "fast", "priority"],
+      "pricing": { "prompt": 5, "completion": 30, "cacheReadInputPer1kTokens": 0.0005, "currency": "USD", "unit": "per_million_tokens" },
+      "reasoning_efforts": ["none", "low", "medium", "high", "xhigh"]
+    },
+    {
+      "id": "z-ai/glm-5.3",
+      "object": "model",
+      "created": 1790208000,
+      "owned_by": "z-ai",
+      "name": "GLM 5.3",
+      "description": "Open-weight model with tool calling.",
+      "context_length": 1048576,
+      "max_output_tokens": 131072,
+      "architecture": { "input_modalities": ["text"], "output_modalities": ["text"] },
+      "capabilities": { "vision": false, "reasoning": true, "tool_calling": true, "structured_output": true },
+      "supported_service_tiers": [],
+      "pricing": { "prompt": 0.6, "completion": 1.1, "currency": "USD", "unit": "per_million_tokens" },
+      "reasoning_efforts": ["low", "high", "max"],
+      "providers": ["zai", "novita", "together"]
+    },
+    {
+      "id": "moonshotai/kimi-k2.6",
+      "object": "model",
+      "created": 1790208000,
+      "owned_by": "moonshotai",
+      "name": "Kimi K2.6",
+      "context_length": 262144,
+      "max_output_tokens": 65536,
+      "architecture": { "input_modalities": ["text", "image"], "output_modalities": ["text"] },
+      "capabilities": { "vision": true, "reasoning": false, "tool_calling": true },
+      "pricing": { "prompt": 0.43225, "completion": 1.82, "currency": "USD", "unit": "per_million_tokens" },
+      "effective_pricing": {
+        "list_price": { "inputPer1kTokens": 0.00095, "outputPer1kTokens": 0.004 },
+        "effective_price": { "inputPer1kTokens": 0.00043225, "outputPer1kTokens": 0.00182 },
+        "pricing_type": "observed",
+        "currency": "USD",
+        "unit": "per_1k_tokens",
+        "discount_percentage": 54.5
+      },
+      "subscription": { "included": true, "inputTokenMultiplier": 1 }
+    },
+    {
+      "id": "openai/gpt-6-luna-decisions",
+      "object": "model",
+      "created": 1790208000,
+      "owned_by": "openai",
+      "name": "GPT-6 Luna Decisions",
+      "description": "Decision output model that must not appear as a chat model.",
+      "context_length": 1050000,
+      "max_output_tokens": 0,
+      "architecture": { "input_modalities": ["text", "image"], "output_modalities": ["decisions"] },
+      "capabilities": { "vision": true, "reasoning": false, "tool_calling": false },
+      "category": "Decisions",
+      "pricing": { "prompt": 0.1, "completion": 0, "currency": "USD", "unit": "per_million_tokens" }
+    },
+    {
+      "id": "acme/unknown-model",
+      "object": "model",
+      "owned_by": "acme"
+    }
+  ]
+}

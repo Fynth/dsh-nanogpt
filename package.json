@@ -1,0 +1,110 @@
+{
+  "name": "dsh-nanogpt",
+  "version": "0.1.1",
+  "description": "NanoGPT provider for DeepSeek Harness: dynamic model catalog, exact per-model reasoning efforts, streaming, tools, routing, usage, and a native settings page.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "meta": {
+    "title": "NanoGPT",
+    "description": "Adds the NanoGPT provider with live model discovery, model-specific reasoning efforts, routing, usage, and diagnostics."
+  },
+  "icon": "./icon.svg",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.1": "compatible",
+        "0.2.0-rc.2": "compatible"
+      }
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.4 <5.0.0",
+    "@deepseek-ai/dsh-atomic-write": ">=0.2.0-rc.1",
+    "@deepseek-ai/dsh-attachment": ">=0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-connection": ">=0.2.0-rc.1",
+    "@deepseek-ai/dsh-credentials": ">=0.2.0-rc.1",
+    "@deepseek-ai/dsh-home-paths": ">=0.2.0-rc.1",
+    "@deepseek-ai/dsh-llm": ">=0.2.0-rc.1",
+    "@deepseek-ai/schemastery": ">=3.18.4 <4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-atomic-write": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-attachment": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-connection": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-credentials": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-home-paths": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.json && node --test tests/unit/*.test.mjs tests/contracts/*.test.mjs tests/integration/*.test.mjs",
+    "test:live": "NANOGPT_LIVE=1 node --test tests/contracts/*.test.mjs",
+    "check": "npm run typecheck && npm run check:client && npm run build && npm run test",
+    "pack:check": "node scripts/check-tarball.mjs",
+    "test:integration": "node --test tests/integration/*.test.mjs",
+    "check:client": "node scripts/check-client.mjs",
+    "test:smoke": "node tests/live/smoke.mjs"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "@deepseek-ai/dsh-atomic-write": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-attachment": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-brand": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-client-connection": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-credentials": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-home-paths": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-llm": "0.2.0-rc.2",
+    "@deepseek-ai/schemastery": "3.18.5",
+    "@types/node": "^22.20.4",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "canonicalId": "deepseek/deepseek-v4.1-flash-1017",
+  "displayName": "DeepSeek V4.1 Flash 1017",
+  "supportsProviderSelection": true,
+  "defaultPrice": { "inputPer1kTokens": 0.0001, "outputPer1kTokens": 0.0006, "cacheReadInputPer1kTokens": 0.000003 },
+  "providers": [
+    {
+      "provider": "deepinfra",
+      "displayName": "DeepInfra",
+      "pricing": { "inputPer1kTokens": 0.000147, "outputPer1kTokens": 0.000441, "cacheReadInputPer1kTokens": 0.00000441 },
+      "available": true,
+      "supportsPromptCaching": true,
+      "maxInputTokens": 1048576,
+      "maxOutputTokens": 131072,
+      "supportedReasoningEfforts": ["none", "low", "medium", "high"],
+      "supportsTools": true,
+      "supportsNonTextMediaInput": true,
+      "quantization": "fp8",
+      "tps": 79,
+      "ttftMs": 1318.5
+    },
+    {
+      "provider": "tensorix",
+      "displayName": "TensorX",
+      "pricing": { "inputPer1kTokens": 0.000525, "outputPer1kTokens": 0.001575 },
+      "available": true,
+      "maxInputTokens": 1048576,
+      "maxOutputTokens": 64000,
+      "supportedReasoningEfforts": ["none", "low", "high", "max"],
+      "supportsTools": true
+    },
+    {
+      "provider": "cloudflare",
+      "displayName": "Cloudflare",
+      "pricing": { "inputPer1kTokens": 0.000105, "outputPer1kTokens": 0.00063 },
+      "available": false,
+      "maxInputTokens": 1048576,
+      "maxOutputTokens": 943718,
+      "supportsPromptCaching": true,
+      "supportsTools": true,
+      "supportsNonTextMediaInput": true
+    }
+  ]
+}
