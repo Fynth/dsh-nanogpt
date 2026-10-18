@@ -44,15 +44,13 @@ modify DSH Core.
 
 ## Install (one command)
 
-Install the current release into the `web` profile:
+Install the tagged source into the `web` profile:
 
 ```bash
-dsh plugin --profile web add \
-  https://github.com/Fynth/dsh-nanogpt/releases/download/v0.1.1/dsh-nanogpt-0.1.1.tgz
+dsh plugin --profile web add github:Fynth/dsh-nanogpt#v0.1.1
 ```
 
-Or use the wrapper, which downloads the release asset (with a repository-dist
-fallback) and prints the restart reminder:
+Or use the wrapper, which runs the same command and prints the restart reminder:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Fynth/dsh-nanogpt/main/scripts/install.sh | bash -s -- web
